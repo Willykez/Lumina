@@ -42,12 +42,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
 import com.willykez.lumina.data.MediaItem
 import com.willykez.lumina.ui.components.EaseOutBack
 import com.willykez.lumina.ui.components.EmptyState
 import com.willykez.lumina.ui.components.FullscreenOverlay
 import com.willykez.lumina.ui.components.GlassTopBar
+import com.willykez.lumina.ui.components.NetImage
 import com.willykez.lumina.ui.theme.BgDeep
 import com.willykez.lumina.ui.theme.Primary
 import com.willykez.lumina.ui.viewmodel.GalleryViewModel
@@ -136,7 +136,7 @@ private fun MosaicGrid(images: List<MediaItem>, onSelect: (MediaItem) -> Unit) {
                     .background(tint)
                     .clickable(interactionSource = src, indication = null) { onSelect(item) }
             ) {
-                AsyncImage(
+                NetImage(
                     model = item.uri, contentDescription = item.name,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
@@ -164,7 +164,7 @@ private fun GradientStrip(images: List<MediaItem>, onSelect: (MediaItem) -> Unit
                     .clip(RoundedCornerShape(3.dp))
                     .clickable { onSelect(item) }
             ) {
-                AsyncImage(
+                NetImage(
                     model = item.uri, contentDescription = item.name,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()

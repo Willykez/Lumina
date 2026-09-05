@@ -39,12 +39,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
 import com.willykez.lumina.data.MediaItem
 import com.willykez.lumina.ui.components.EaseOutBack
 import com.willykez.lumina.ui.components.EmptyState
 import com.willykez.lumina.ui.components.FullscreenOverlay
 import com.willykez.lumina.ui.components.GlassTopBar
+import com.willykez.lumina.ui.components.NetImage
 import com.willykez.lumina.ui.theme.BgDeep
 import com.willykez.lumina.ui.viewmodel.GalleryViewModel
 import com.willykez.lumina.utils.RequestMediaPermission
@@ -117,7 +117,7 @@ private fun MorphThumbnail(item: MediaItem, idx: Int, onClick: () -> Unit) {
             .clip(RoundedCornerShape(8.dp))
             .clickable(interactionSource = src, indication = null) { onClick() }
     ) {
-        AsyncImage(
+        NetImage(
             model = item.uri, contentDescription = item.name,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()

@@ -39,10 +39,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
 import com.willykez.lumina.ui.components.EmptyState
 import com.willykez.lumina.ui.components.FullscreenOverlay
 import com.willykez.lumina.ui.components.GlassTopBar
+import com.willykez.lumina.ui.components.NetImage
 import com.willykez.lumina.ui.theme.BgDeep
 import com.willykez.lumina.ui.theme.Cyan
 import com.willykez.lumina.ui.theme.Primary
@@ -106,7 +106,7 @@ fun ParallaxGalleryScreen(nav: NavController, vm: GalleryViewModel = viewModel()
                         .clip(RoundedCornerShape(5.dp))
                         .clickable { vm.select(item) }
                 ) {
-                    AsyncImage(
+                    NetImage(
                         model = item.uri,
                         contentDescription = item.name,
                         contentScale = ContentScale.Crop,

@@ -52,11 +52,11 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
 import com.willykez.lumina.data.MediaItem
 import com.willykez.lumina.ui.components.EmptyState
 import com.willykez.lumina.ui.components.FullscreenOverlay
 import com.willykez.lumina.ui.components.GlassTopBar
+import com.willykez.lumina.ui.components.NetImage
 import com.willykez.lumina.ui.theme.Amber
 import com.willykez.lumina.ui.theme.BgCard
 import com.willykez.lumina.ui.theme.BgDeep
@@ -160,7 +160,7 @@ private fun ClusterBubble(cluster: Cluster, pulse: Float, onClick: () -> Unit) {
             contentAlignment = Alignment.Center
         ) {
             cluster.items.firstOrNull()?.let { item ->
-                AsyncImage(
+                NetImage(
                     model = item.uri, contentDescription = null,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
@@ -241,7 +241,7 @@ private fun ExpandedCluster(cluster: Cluster, onSelect: (MediaItem) -> Unit) {
                             .clip(RoundedCornerShape(6.dp))
                             .clickable { onSelect(item) }
                     ) {
-                        AsyncImage(
+                        NetImage(
                             model = item.uri, contentDescription = item.name,
                             contentScale = ContentScale.Crop,
                             modifier = Modifier.fillMaxSize()

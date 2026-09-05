@@ -32,11 +32,11 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import coil.compose.AsyncImage
 import com.willykez.lumina.data.MediaItem
 import com.willykez.lumina.ui.components.EmptyState
 import com.willykez.lumina.ui.components.FullscreenOverlay
 import com.willykez.lumina.ui.components.GlassTopBar
+import com.willykez.lumina.ui.components.NetImage
 import com.willykez.lumina.ui.theme.BgCard
 import com.willykez.lumina.ui.theme.BgDeep
 import com.willykez.lumina.ui.theme.Divider
@@ -92,7 +92,7 @@ fun InfiniteCanvasScreen(nav: NavController, vm: GalleryViewModel = viewModel())
                         .border(1.dp, Divider.copy(0.4f), RoundedCornerShape(10.dp))
                         .clickable { vm.select(node.item) }
                 ) {
-                    AsyncImage(
+                    NetImage(
                         model = node.item.uri, contentDescription = node.item.name,
                         contentScale = ContentScale.Crop,
                         modifier = Modifier.fillMaxSize()
